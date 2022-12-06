@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <style>
+        .numbers {
+            width: 40px;
+            border-radius: 19px;
+            border: 2px solid beige;
+            position: relative;
+            top: 35px;
+            margin: 3px;
+            margin-bottom: 5px;
+            padding: 9px;
+            left: 7px;
+        }
+
+        .container {
+            border: 2px solid rgb(206, 131, 131);
+            width: 210px;
+            margin: auto;
+            height: 250px;
+            border-radius: 19px;
+            background-color: black;
+        }
+        .inp{
+            position: relative;
+            top: 19px;
+            left: 5px;
+            border-radius: 20px;
+            border: 2px solid rgb(47, 36, 101);
+            background-color: cornflowerblue;
+            width: 190px;
+            height: 20px;
+        }
+    </style>
+    <div class="container">
+        <input type="text" class="inp">
+        <button class="numbers" id="n1">1</button>
+        <button class="numbers" id="n2">2</button>
+        <button class="numbers" id="n3">3</button>
+        <button class="numbers" id="nsymbol">+</button>
+        <button class="numbers" id="n4">4</button>
+        <button class="numbers" id="n5">5</button>
+        <button class="numbers" id="n6">6</button>
+        <button class="numbers" id="nsymbol2">-</button>
+        <button class="numbers" id="n7">7</button>
+        <button class="numbers" id="n8">8</button>
+        <button class="numbers" id="n9">9</button>
+        <button class="numbers" id="nsymbol3">*</button>
+        <button class="numbers" id="n0">0</button>
+        <button class="numbers" id="nsymbol4">C</button>
+        <button class="numbers" id="nsymbol5">=</button>
+        <button class="numbers" id="nsymbol6">/</button>
+    </div>
+    <script>
+    	let n1 = document.getElementById("n1")
+    	let n2 = document.getElementById("n2")
+    	let n3 = document.getElementById("n3")
+    	let n4 = document.getElementById("n4")
+    	let n5 = document.getElementById("n5")
+    	let n6 = document.getElementById("n6")
+    	let n7 = document.getElementById("n7")
+    	let n8 = document.getElementById("n8")
+    	let n9 = document.getElementById("n9")
+    	let n0 = document.getElementById("n0")
+    	let nsymbol = document.getElementById("nsymbol")
+    	let nsymbol2 = document.getElementById("nsymbol2")
+    	let nsymbol3 = document.getElementById("nsymbol3")
+    	let nsymbol4 = document.getElementById("nsymbol4")
+    	let nsymbol5 = document.getElementById("nsymbol5")
+    	let nsymbol6 = document.getElementById("nsymbol6")
+    	
+    	let string = ""
+    	
+    	let inp = document.body.firstElementChild.nextElementSibling.firstElementChild
+    	console.log(inp)
+    	const func1 = (e) => {
+    	if (e.target.innerHTML == "="){
+    	string = eval(string)
+    	inp.value = string;
+    	console.log(string)
+    	}
+    	else if (e.target.innerHTML == "C"){
+    	string = ""
+    	inp.value = string;
+    	console.log(string)
+    	}
+    	else{
+    	console.log(e.target)
+    	string = string + e.target.innerHTML
+    	console.log(string)
+    	inp.value = string;
+    	}
+    	}
+    	n1.addEventListener("click", func1)
+    	n2.addEventListener("click", func1)
+    	n3.addEventListener("click", func1)
+    	n4.addEventListener("click", func1)
+    	n5.addEventListener("click", func1)
+    	n6.addEventListener("click", func1)
+    	n7.addEventListener("click", func1)
+    	n8.addEventListener("click", func1)
+    	n9.addEventListener("click", func1)
+    	n0.addEventListener("click", func1)
+    	nsymbol.addEventListener("click" , func1)
+    	nsymbol2.addEventListener("click" , func1)
+    	nsymbol3.addEventListener("click" , func1)
+    	nsymbol4.addEventListener("click" , func1)
+    	nsymbol5.addEventListener("click" , func1)
+    	nsymbol6.addEventListener("click" , func1)
+    </script>
+</body>
+
+</html>
